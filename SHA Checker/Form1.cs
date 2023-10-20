@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace SHA_Checker
@@ -14,7 +15,6 @@ namespace SHA_Checker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Choose the directory to scan
             using (var folderBrowser = new FolderBrowserDialog())
             {
                 folderBrowser.Description = "Select a directory to scan files.";
@@ -22,7 +22,6 @@ namespace SHA_Checker
                 {
                     string directoryPath = folderBrowser.SelectedPath;
 
-                    // Allow the user to choose the output file location
                     using (var saveFileDialog = new SaveFileDialog())
                     {
                         saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
@@ -47,8 +46,13 @@ namespace SHA_Checker
                 if (File.Exists(filePath))
                 {
                     string sha256Hash = CalculateSHA256(filePath);
-                    string fileInfo = Path.GetFileName(filePath) + ": " + sha256Hash;
-                    fileInfos.Add(fileInfo);
+                    FileInfo fileInfo = new FileInfo(filePath);
+
+                    string formattedFileInfo = $"Name: {Path.GetFileName(filePath)}\n" +
+                                              $"File Size: {fileInfo.Length} bytes\n" +
+                                              $"SHA256: {sha256Hash.ToUpper()}\n";
+
+                    fileInfos.Add(formattedFileInfo);
                 }
             }
 
@@ -76,5 +80,3 @@ namespace SHA_Checker
         }
     }
 }
-
-
