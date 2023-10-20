@@ -1,0 +1,10 @@
+C:\Users\Stephen Griffiths\source\repos\SHA Checker App\SHA Checker\SHA Checker\obj\Debug\SHA Checker.csproj.AssemblyReference.cache
+C:\Users\Stephen Griffiths\source\repos\SHA Checker App\SHA Checker\SHA Checker\obj\Debug\SHA_Checker.Form1.resources
+C:\Users\Stephen Griffiths\source\repos\SHA Checker App\SHA Checker\SHA Checker\obj\Debug\SHA_Checker.Properties.Resources.resources
+C:\Users\Stephen Griffiths\source\repos\SHA Checker App\SHA Checker\SHA Checker\obj\Debug\SHA Checker.csproj.GenerateResource.cache
+C:\Users\Stephen Griffiths\source\repos\SHA Checker App\SHA Checker\SHA Checker\obj\Debug\SHA Checker.csproj.CoreCompileInputs.cache
+C:\Users\Stephen Griffiths\source\repos\SHA Checker App\SHA Checker\SHA Checker\bin\Debug\SHA Checker.exe.config
+C:\Users\Stephen Griffiths\source\repos\SHA Checker App\SHA Checker\SHA Checker\bin\Debug\SHA Checker.exe
+C:\Users\Stephen Griffiths\source\repos\SHA Checker App\SHA Checker\SHA Checker\bin\Debug\SHA Checker.pdb
+C:\Users\Stephen Griffiths\source\repos\SHA Checker App\SHA Checker\SHA Checker\obj\Debug\SHA Checker.exe
+C:\Users\Stephen Griffiths\source\repos\SHA Checker App\SHA Checker\SHA Checker\obj\Debug\SHA Checker.pdb
