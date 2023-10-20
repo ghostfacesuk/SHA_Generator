@@ -1,13 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Security.Cryptography;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SHA_Checker
@@ -28,9 +21,19 @@ namespace SHA_Checker
                 if (folderBrowser.ShowDialog() == DialogResult.OK)
                 {
                     string directoryPath = folderBrowser.SelectedPath;
-                    string outputFile = "file_hashes.txt";
-                    CalculateAndSaveHashes(directoryPath, outputFile);
-                    label1.Text = "File hashes saved to " + outputFile;
+
+                    // Allow the user to choose the output file location
+                    using (var saveFileDialog = new SaveFileDialog())
+                    {
+                        saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+                        saveFileDialog.FileName = "file_hashes.txt";
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string outputFile = saveFileDialog.FileName;
+                            CalculateAndSaveHashes(directoryPath, outputFile);
+                            label1.Text = "File hashes saved to " + outputFile;
+                        }
+                    }
                 }
             }
         }
@@ -52,6 +55,16 @@ namespace SHA_Checker
             File.WriteAllLines(outputFile, fileInfos);
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            // This event handler can be left empty or implement functionality if needed.
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // This event handler can be left empty or implement functionality if needed.
+        }
+
         private string CalculateSHA256(string filePath)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -61,15 +74,7 @@ namespace SHA_Checker
                 return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+
+
