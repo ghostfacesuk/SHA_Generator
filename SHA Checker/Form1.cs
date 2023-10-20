@@ -78,5 +78,13 @@ namespace SHA_Checker
                 return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
             }
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string version = Application.ProductVersion;
+            string message = "SHA Checker\n\nVersion: " + version + "\n\nAuthor: Stevie G";
+
+            MessageBox.Show(message, "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
